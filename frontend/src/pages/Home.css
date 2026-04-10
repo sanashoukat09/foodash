@@ -1,0 +1,38 @@
+.hero {
+  position: relative; min-height: 85vh; display: flex; align-items: center;
+  padding: 80px 0 60px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(255,69,0,0.2) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 40% at 80% 80%, rgba(255,184,0,0.08) 0%, transparent 60%);
+}
+.hero-content { position: relative; max-width: 680px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255,69,0,0.12); border: 1px solid rgba(255,69,0,0.3); border-radius: 99px; font-size: 13px; font-weight: 600; color: var(--brand); margin-bottom: 24px; }
+.hero-title { font-size: clamp(42px, 7vw, 80px); font-weight: 800; line-height: 1.05; margin-bottom: 20px; }
+.hero-gradient { background: linear-gradient(135deg, var(--brand), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 18px; color: var(--text-muted); margin-bottom: 36px; max-width: 480px; line-height: 1.6; }
+.search-bar { display: flex; align-items: center; gap: 12px; background: var(--dark2); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 8px 8px 8px 16px; max-width: 560px; transition: border-color 0.2s; }
+.search-bar:focus-within { border-color: var(--brand); }
+.search-input { flex: 1; background: none; border: none; outline: none; color: var(--text); font-size: 15px; }
+.search-input::placeholder { color: var(--text-dim); }
+.hero-stats { display: flex; gap: 32px; margin-top: 36px; flex-wrap: wrap; }
+.stat { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-muted); }
+.stat b { color: var(--text); }
+.cuisine-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+.cuisine-scroll::-webkit-scrollbar { height: 0; }
+.cuisine-pill { padding: 8px 18px; border-radius: 99px; background: var(--dark2); border: 1.5px solid var(--border); color: var(--text-muted); font-size: 13px; font-weight: 500; white-space: nowrap; cursor: pointer; transition: all 0.2s; }
+.cuisine-pill:hover { border-color: var(--brand); color: var(--text); }
+.cuisine-pill.active { background: var(--brand); border-color: var(--brand); color: white; }
+.restaurants-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.restaurant-card { cursor: pointer; }
+.restaurant-img-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+.restaurant-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.restaurant-card:hover .restaurant-img { transform: scale(1.05); }
+.closed-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: var(--error); }
+.cuisine-tag { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); }
+.restaurant-body { padding: 16px; }
+.restaurant-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+.restaurant-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.restaurant-meta { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-muted); }
+.restaurant-meta span { display: flex; align-items: center; gap: 4px; }

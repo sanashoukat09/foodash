@@ -1,0 +1,27 @@
+.auth-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 20px 40px;position:relative;}
+.auth-bg{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 30% 50%,rgba(255,69,0,0.12) 0%,transparent 70%);}
+.auth-card{padding:40px;width:100%;max-width:440px;position:relative;}
+.auth-logo{display:flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:28px;}
+.auth-title{font-size:28px;font-weight:800;margin-bottom:6px;}
+.auth-sub{color:var(--text-muted);font-size:14px;margin-bottom:28px;}
+.auth-form{display:flex;flex-direction:column;gap:18px;}
+.input-group{display:flex;flex-direction:column;gap:8px;}
+.input-group label{font-size:13px;font-weight:600;color:var(--text-muted);}
+.input-icon-wrap{position:relative;}
+.input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-dim);pointer-events:none;}
+.input-with-icon{padding-left:42px!important;}
+.input-with-icon-right{padding-right:42px!important;}
+.input-icon-right{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);cursor:pointer;display:flex;padding:0;}
+.input-icon-right:hover{color:var(--text);}
+.auth-demo{margin-top:24px;padding:16px;background:var(--dark3);border-radius:var(--radius-sm);border:1px solid var(--border);}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.demo-btn{padding:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-muted);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.demo-btn:hover{background:rgba(255,69,0,0.1);border-color:var(--brand);color:var(--brand);}
+.auth-footer{text-align:center;margin-top:24px;font-size:14px;color:var(--text-muted);}
+.auth-footer a{color:var(--brand);font-weight:600;}
+.role-grid{display:flex;flex-direction:column;gap:8px;}
+.role-card{padding:12px 16px;background:var(--dark3);border:1.5px solid var(--border);border-radius:var(--radius-sm);text-align:left;cursor:pointer;transition:all 0.2s;}
+.role-card:hover{border-color:rgba(255,69,0,0.4);}
+.role-card.active{border-color:var(--brand);background:rgba(255,69,0,0.08);}
+.role-label{display:block;font-size:14px;font-weight:600;margin-bottom:2px;}
+.role-desc{display:block;font-size:12px;color:var(--text-muted);}

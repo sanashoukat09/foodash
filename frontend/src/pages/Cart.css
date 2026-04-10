@@ -1,0 +1,4 @@
+.cart-layout{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;}
+.card-element-wrap{background:var(--dark3);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px;transition:border-color 0.2s;}
+.card-element-wrap:focus-within{border-color:var(--brand);}
+@media(max-width:900px){.cart-layout{grid-template-columns:1fr;}}
