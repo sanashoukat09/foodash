@@ -1,0 +1,45 @@
+version: '3'
+services:
+  mongo-jenkins:
+    image: mongo:6
+    container_name: jenkins_mongo
+    volumes:
+      - jenkins_mongo_data:/data/db
+    networks:
+      - jenkins_network
+
+  backend-jenkins:
+    image: node:18
+    container_name: jenkins_backend
+    working_dir: /app/backend
+    volumes:
+      - ./backend:/app/backend
+    command: sh -c "npm install && node server.js"
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mongo-jenkins
+    environment:
+      - MONGO_URI=mongodb://mongo-jenkins:27017/foodash
+    networks:
+      - jenkins_network
+
+  frontend-jenkins:
+    image: node:20
+    container_name: jenkins_frontend
+    working_dir: /app/frontend
+    volumes:
+      - ./frontend:/app/frontend
+    command: sh -c "npm install && npm start"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-jenkins
+    networks:
+      - jenkins_network
+
+volumes:
+  jenkins_mongo_data:
+
+networks:
+  jenkins_network:
