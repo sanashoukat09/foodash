@@ -11,7 +11,7 @@ pipeline {
     post {
         always {
             emailext(
-                to: "qasimalik@gmail.com",
+                to: "sanashoukat099@gmail.com",
                 subject: "FooDash Deployment - Build #${BUILD_NUMBER} - ${currentBuild.currentResult}",
                 body: "<h2>FooDash Deployment</h2><p>Status: ${currentBuild.currentResult}</p><p>Build: #${BUILD_NUMBER}</p><p>URL: http://52.64.176.76</p>",
                 mimeType: 'text/html'
