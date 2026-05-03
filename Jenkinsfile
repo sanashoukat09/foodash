@@ -1,28 +1,21 @@
 pipeline {
     agent any
-
     stages {
-        stage('Clone Repository') {
+        stage('Deploy FooDash') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/sanashoukat09/foodash.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'docker-compose -f docker-compose.jenkins.yml -p foodash_jenkins down || true'
-                sh 'docker-compose -f docker-compose.jenkins.yml -p foodash_jenkins up -d'
+                sh 'sudo systemctl start nginx'
+                sh 'pm2 start /home/ubuntu/foodash/backend/server.js --name foodash-api || pm2 restart foodash-api'
             }
         }
     }
-
     post {
-        success {
-            echo 'Build successful! FooDash Jenkins deployment is up.'
-        }
-        failure {
-            echo 'Build failed!'
+        always {
+            emailext(
+                to: "qasimalik@gmail.com",
+                subject: "FooDash Deployment - Build #${BUILD_NUMBER} - ${currentBuild.currentResult}",
+                body: "<h2>FooDash Deployment</h2><p>Status: ${currentBuild.currentResult}</p><p>Build: #${BUILD_NUMBER}</p><p>URL: http://52.64.176.76</p>",
+                mimeType: 'text/html'
+            )
         }
     }
 }
