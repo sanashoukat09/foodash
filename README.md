@@ -5,8 +5,6 @@ A production-grade food delivery platform with real-time order tracking, Stripe 
 ---
 
 
-
-
 ## 🚀 Tech Stack
 
 | Layer | Tech |
