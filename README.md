@@ -1,7 +1,6 @@
 # 🍕 Foodash — Full-Stack Food Delivery Platform
 
 A production-grade food delivery platform with real-time order tracking, Stripe payments, multi-role dashboards, and live chat.
-
 ---
 
 
