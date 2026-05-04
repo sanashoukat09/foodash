@@ -5,7 +5,6 @@ A production-grade food delivery platform with real-time order tracking, Stripe 
 
 ## 🚀 Tech Stack
 
-
 | Layer | Tech |
 |---|---|
 | Frontend | React 18 + Vite, React Router, Stripe.js, Socket.io-client, Recharts |
